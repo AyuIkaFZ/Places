@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements
         mAdapter = new PlaceListAdapter(this, null);
         mRecyclerView.setAdapter(mAdapter);
 
+        // TODO (4) Create a GoogleApiClient with the LocationServices API and GEO_DATA_API
+
         // Initialize the switch state and Handle enable/disable switch change
         Switch onOffSwitch = (Switch) findViewById(R.id.enable_switch);
         mIsEnabled = getPreferences(MODE_PRIVATE).getBoolean(getString(R.string.setting_enabled), false);
@@ -102,6 +104,10 @@ public class MainActivity extends AppCompatActivity implements
                 else mGeofencing.unRegisterAllGeofences();
             }
 
+            // TODO (5) Override onConnected, onConnectionSuspended and onConnectionFailed for GoogleApiClient
+            // TODO (7) Override onResume and inside it initialize the location permissions checkbox
+            // TODO (8) Implement onLocationPermissionClicked to handle the CheckBox click event
+            // TODO (9) Implement the Add Place Button click event to show  a toast message with the permission status
         });
 
         // Build up the LocationServices API client
